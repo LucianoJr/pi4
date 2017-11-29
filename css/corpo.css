@@ -1,0 +1,119 @@
+/*
+ *
+ * StarWeb FrameWork vs. 2.9c
+ *   starweb@starweb-software.com.br
+ *
+ * Arquivo: login.css
+ *   Autor: Agnaldo Macedo
+ *    Data: 01/12/2012
+ *  Função: Arquivo CSS para a tela de login
+ *
+ */
+  
+body
+   {
+		background-color: #FFFFFF;
+		color: #000000;
+		font-family: Helvetica; 
+		font-size: 12px;
+		margin-top: 0px;
+   }
+
+.divPrincipal
+   {
+      background-color: #F5F5F5; 
+      height: 500px; 
+      left: 50%; 
+      margin: -250px 0 0 -250px; 
+      position: absolute; 
+      top: 50%; 
+      width: 500px;
+   }
+
+.versao
+   {
+      font-family: Helvetica; 
+      font-size: 10px;
+      color: #990000;
+      font-weight: bold;
+   }
+
+.msg
+   {
+      font-family: Helvetica; 
+      font-size: 12px;
+      font-style: normal;
+      color: #990000;
+      text-align: left;
+   }
+
+.trRodape
+   {
+      background-color: #C2D3FC;
+   }
+
+.trCabecalho
+   {
+      background-color: #C2D3FC; 
+      vertical-align: middle; 
+      /* line-height: 25px; */
+      font-size: 14px;
+   }
+
+table
+	{
+      color: #000000;
+      font-family: Helvetica; 
+      font-size: 12px;		
+	}
+
+#divCorpo table
+   {
+      border-collapse: collapse;
+      border: 1px solid #fff;
+      color: #000000;
+      font-family: Helvetica; 
+      font-size: 12px;     
+   }
+
+#divCorpo .trDados
+   {
+      border: 1px solid #ddd
+   }  
+
+#divCorpo .tdPequeno
+   {
+      font-size: 10px;      
+      border: 1px solid #ddd
+   }  
+
+#divCorpo .tdTitulo
+   {
+      font-size: 14px;
+      font-weight: bold;
+      border: 1px solid #C0C0C0
+   }  
+
+#divCorpo .trCabecalho
+   {
+      font-weight: bold;
+      font-size: 12px;      
+      border: 1px solid #ddd;
+      background-color: #C0C0C0;
+   }  
+
+#divCorpo .trCabecalhoPed
+   {
+      font-weight: none;
+      font-size: 10px;      
+      border: 1px solid #ddd;
+      background-color: #C0C0C0;
+   }  
+
+#divCorpo .trDadosPed
+   {
+      border: 1px solid #ddd
+   }  
+
+
+/* *** Fim do arquivo login.css *** */

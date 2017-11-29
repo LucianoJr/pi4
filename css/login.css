@@ -1,0 +1,74 @@
+/*
+ *
+ * StarWeb FrameWork vs. 2.9c
+ *   starweb@starweb-software.com.br
+ *
+ * Arquivo: login.css
+ *   Autor: Agnaldo Macedo
+ *    Data: 01/12/2012
+ *  Função: Arquivo CSS para a tela de login
+ *
+ */
+  
+body
+   {
+      background-color: #FFFFFF;
+      color: #000080;
+   }
+
+.divPrincipal
+   {
+      background-color: #FFFFFF; 
+      height: 200px; 
+      left: 50%; 
+      margin: -200px 0 0 -200px; 
+      position: absolute; 
+      top: 50%; 
+      width: 400px;
+   }
+
+.versao
+   {
+      font-family: Helvetica; 
+      font-size: 10px;
+      color: #990000;
+      font-weight: bold;
+   }
+
+.msg
+   {
+      font-family: Helvetica; 
+      font-size: 12px;
+      font-style: normal;
+      color: #990000;
+      text-align: left;
+   }
+
+.trRodape
+   {
+      background-color: #C2D3FC;
+   }
+
+.trCabecalho
+   {
+      background-color: #C2D3FC; 
+      vertical-align: middle; 
+      line-height: 25px; 
+      font-size: 14px;
+   }
+
+table
+   {
+      border-style: solid;
+      border-radius: 10px;
+      border-color: #C2D3FC #C2D3FC #C2D3FC #C2D3FC;
+      border-width: 2px;      
+      font-family: Helvetica;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: bold      
+   }
+
+
+
+/* *** Fim do arquivo login.css *** */

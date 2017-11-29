@@ -1,0 +1,170 @@
+.modal
+{
+	width:380px;
+	height:auto;
+	border:1px solid #d4d4d4;
+	background-color:#fff;
+	position:relative;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    behavior: url(js/PIE.htc);
+    padding:70px 30px 30px 30px;
+	}
+
+/*------------------CADASTRE-SE | LOGIN------------------*/
+.modal .ttl{
+	width:283px;
+	height:36px;
+	font:normal 18px 'futura_md_btbold';
+	text-transform:uppercase;
+	color:#fff;
+	background:url("../images/img-ttl-seja-revendedor-modal.png") top left no-repeat;
+	padding:10px 0 0 20px;
+	position:absolute;
+	top:-1px;
+	left:-1px;
+	}
+.modal .subtitulo04
+{
+	margin-bottom:10px;
+	}
+.modal .ttl-login
+{
+	width:133px;
+	height:36px;
+	background:url("../images/img-ttl-login.png") top left no-repeat;
+	}
+.modal .formulario
+{
+	width:300px;
+	height:auto;
+	border:none;
+	padding:0 0 30px 0;
+	background-color:Transparent;
+	 -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    behavior: none;
+    position:relative;
+	}
+/*.modal .formulario .bt-enviar
+{
+	background:url("../Images/bt-cadastre-se.png") top left no-repeat;
+	}
+.modal .formulario .bt-enviar:hover
+{
+	background-position:0 -26px;
+	}*/
+.modal .formulario div
+{
+	width:auto;
+	height:auto;
+	}
+.modal .formulario table
+{
+	margin:0;
+	}
+.modal .formulario table td div input
+{
+	width:284px;
+	}
+.modal .bt-fechar
+{
+	position:absolute;
+	top:20px;
+	right:20px;
+	}
+.bt-fechar
+{
+	width:72px;
+	height:12px;
+	display:block;
+	background:url("../images/bt-fechar.png") top left no-repeat;
+	}
+.bt-fechar:hover
+{
+	background-position:0 -12px;
+	}
+.modal .bt-ja-sou-cadastrado, .bt-ainda-nao-sou-cadastrado
+{
+	margin:0 auto;
+	}
+.bt-ja-sou-cadastrado
+{
+	width:150px;
+	height:17px;
+	display:block;
+	background:url("../images/bt-ja-sou-cadastrado.jpg") top left no-repeat;
+	}
+	
+.bt-ja-sou-cadastrado:hover
+{
+	background-position:0 -17px;
+	}
+.bt-ainda-nao-sou-cadastrado
+{
+	width:209px;
+	height:17px;
+	display:block;
+	background:url("../images/bt-ainda-nao-sou-cadastrado.jpg") top left no-repeat;
+	}
+.bt-ainda-nao-sou-cadastrado:hover
+{
+	background-position:0 -17px;
+	}
+/*------------------ESTRUTURA MODAL------------------*/
+
+#interContainer{
+position: absolute;
+width: 600px; /*Width of interstitial box*/
+height:auto;
+left: 0;
+top: 0;
+background-color: Transparent;
+/*border: 1px solid black;*/
+visibility: hidden;
+z-index: 10001;
+font:normal 11px Trebuchet MS, Arial, Helvetica, sans-serif;
+color:#909090;
+line-height:auto;
+}
+#interVeil{ /*CSS for background veil that covers entire page while interstitial box is visible*/
+position: absolute;
+background: black url(blackdot.gif);
+right: 0;
+width: 0px;
+top: 0;
+z-index: 5;
+visibility: hidden;
+filter:progid:DXImageTransform.Microsoft.alpha(opacity=60);
+opacity: 0.6;
+}
+#interContainer .headerbar a{ /*CSS for header bar links of interstitial box*/
+visibility: hidden;
+font-size: none;
+text-decoration: none;
+border:5px solid red;
+}
+	
+	
+	
+	
+	
+/*
+#interContainer .headerbar{ /*CSS for header bar of interstitial box*/
+/*visibility: hidden;
+color: gray;
+padding: 0px 0;
+text-align: right;
+border:5px solid red;
+}*/
+/*#interContent
+{
+     /*CSS for div that holds the content to show*/
+    /*border: 1px solid gray;*/
+   /* width:auto;
+    background-color: Transparent;
+    padding-top: -15px;
+    border:5px solid red;
+}*/

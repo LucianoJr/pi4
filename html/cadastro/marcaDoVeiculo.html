@@ -1,0 +1,197 @@
+    <!-- <h2>Cadastro de Marcas de Veiculo</h2> -->
+    <br>
+    <table id="dg" class="easyui-datagrid" style="width:650px;height:365px"
+            title="Carregando ..." 
+            url="cadastro/datagrid/marcaDoVeiculo.php"
+            toolbar="#toolbar" pagination="true"
+            rownumbers="true" fitColumns="true" singleSelect="true" data-options="onLoadSuccess:dgLoadSuccess,onLoadError:dgLoadError">
+        <thead>
+            <tr>
+                <th field="marca" width="30">Código</th>
+                <th field="nome" width="140">Nome da marca</th>
+            </tr>
+        </thead>
+    </table>
+    <div id="toolbar">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="incluir()">Incluir</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="alterar()">Alterar</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="excluir()">Excluir</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-print" plain="true" onclick="imprimir()">Imprimir</a>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pesq. nome:</span>
+        <input type="text" name="pesquisa" id="pesquisa" style="line-height:22px;border:1px solid #ccc" onKeypress="if (event.keyCode==13) pesquisar();">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="javascript:pesquisar()"></a>
+    </div>
+    
+    <div id="dlg" class="easyui-dialog" style="width:400px" closed="true" buttons="#dlg-buttons">
+        <form id="form" method="post" novalidate style="margin:0;padding:20px 50px">
+            <div style="margin-bottom:20px;font-size:14px;border-bottom:1px solid #ccc">Informações</div>
+            <div style="margin-bottom:10px">
+                <input name="marca" id="chave" class="easyui-textbox" required="true" label="Marca:" labelAlign="right" style="width:100%;">
+            </div>
+            <div style="margin-bottom:10px">
+                <input name="nome" class="easyui-textbox" required="true" label="Nome:" labelAlign="right" style="width:100%">
+            </div>
+        </form>
+    </div>
+    <div id="dlg-buttons">
+        <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="salvar()" style="width:90px">Salvar</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">Cancelar</a>
+    </div>
+
+    <script type="text/javascript">
+
+        var tabelaEmUso = "marcaDoVeiculo";
+        var chaveEmUso  = "marca";
+        var labelTela   = "Marcas de veiculos";
+
+        var urlIncluir  = 'cadastro/incluir/'  + tabelaEmUso + '.php';
+        var urlAlterar  = 'cadastro/alterar/'  + tabelaEmUso + '.php';
+        var urlExcluir  = 'cadastro/excluir/'  + tabelaEmUso + '.php';
+        var urlImprimir = 'cadastro/imprimir/' + tabelaEmUso + '.php';
+
+        var url;
+
+
+        var permissao = 'permissoes.php';
+
+        $.post(permissao,function(result)
+            {console.log(result);
+                if (result.permissoes)
+                        {
+                            console.log(result.permissoes);
+                        } 
+            },'json');
+
+        
+
+
+        function pesquisar()
+            {   
+                $('#dg').datagrid('load',{pesquisa:$('#pesquisa').val()});
+            } // function pesquisar()
+
+
+        function imprimir()
+            {   
+                window.open(urlImprimir);
+            } // function pesquisar()
+
+
+        function dgLoadSuccess(data)
+            {
+                var rows = $('#dg').datagrid('getRows');
+                var dgPanel = $('#dg').datagrid('getPanel');
+                dgPanel.panel('setTitle', labelTela);
+
+            } // function dgLoad(data)
+
+
+        function dgLoadError()
+            {
+                var rows = $('#dg').datagrid('getRows');
+                var dgPanel = $('#dg').datagrid('getPanel');
+                dgPanel.panel('setTitle', labelTela + " (Erro no acesso ao servidor de dados)");
+
+                alert("Erro no acesso ao servidor de dados");
+            } // function dgLoad(data)
+
+
+        function incluir()
+            {
+                url = urlIncluir;
+                $('#chave').textbox('readonly',false);
+                $('#dlg').dialog('open').dialog('center').dialog('setTitle','Incluir ' + labelTela);
+                $('#form').form('clear');
+            } // function incluir()
+
+
+        function alterar()
+            {
+                var row = $('#dg').datagrid('getSelected');
+                if (row)
+                    {
+                        url = urlAlterar;
+                        // desabilita chave primária na alteração
+                        $('#chave').textbox('readonly',true);
+                        console.log("r=",row);
+
+                        $('#dlg').dialog('open').dialog('center').dialog('setTitle','Alterar ' + labelTela);
+                        $('#form').form('load',row);
+                    }
+            } // function alterar()
+
+
+        function salvar()
+            {
+                if ($('#form').form('validate'))
+                        {
+                            if (url==urlIncluir)
+                                    txtMsg = "Confirma que deseja incluir esse registro?";
+                                else
+                                    txtMsg = "Confirma que deseja alterar esse registro?";
+                            $.messager.confirm('Salvar dados',txtMsg,function(confirmaSalvar)
+                                {
+                                    if (confirmaSalvar)
+                                            {
+                                                $('#form').form('submit',
+                                                    {
+                                                        url: url,
+                                                        onSubmit: function()
+                                                            {
+                                                                return true;
+                                                            },
+                                                        success: function(result)
+                                                            {
+                                                                var retorno = eval('(' + result + ')');
+                                                                console.log("result=",result);
+                                                                if (retorno.erro)
+                                                                        {
+                                                                            $.messager.show({title: 'Erro', msg: retorno.erro});
+                                                                        } 
+                                                                    else 
+                                                                        {  $.messager.show({title: 'Dados', msg: retorno.dados});
+                                                                            $('#dlg').dialog('close');      // close the dialog
+                                                                            $('#dg').datagrid('reload');    // reload the user data
+                                                                        }
+                                                            }
+                                                    });
+                                            }    
+                                        else
+                                            return false;
+                                }
+                            );
+                        }
+                    else
+                        return false;
+
+            } // function salvar()
+
+
+        function excluir()
+            {
+                var row = $('#dg').datagrid('getSelected');
+                if (row)
+                    {
+                        $.messager.confirm('Confirm','Confirma a exclusão?',function(r)
+                            {
+                                if (r)
+                                    {                                        
+                                        $.post(urlExcluir,{marca:row.marca},function(result)
+                                            {
+                                                if (result.erro)
+                                                        {
+                                                            $.messager.show({title: 'Erro', msg: result.erro});
+                                                        } 
+                                                    else 
+                                                        {  
+                                                            $.messager.show({title: 'Dados', msg: result.dados});
+                                                            $('#dg').datagrid('reload');    // reload the user data
+                                                        }
+                                            },'json');
+                                    }
+                            });
+                    }
+            } // function excluir()
+
+    </script>
+

@@ -1,0 +1,261 @@
+/**
+ *********************************************
+ * Prototype of styles for horizontal CSS-menu
+ * @data 25.01.2010
+ *********************************************
+ * (X)HTML-scheme:
+ *  <div id="menu">
+ *      <ul class="menu">
+ *          <li><a href="#" class="parent"><span>level 1</span></a>
+ *              <div><ul>
+ *                  <li><a href="#" class="parent"><span>level 2</span></a>
+ *                      <div><ul><li><a href="#"><span>level 3</span></a></li></ul></div>
+ *                  </li>
+ *              </ul></div>
+ *          </li>
+ *          <li class="last"><a href="#"><span>level 1</span></a></li>
+ *      </ul>
+ *  </div>
+ *********************************************
+ */
+/* Menu AÇÃO */
+#menu li > div
+{
+	visibility: hidden;
+}
+#menu li:hover > div
+{
+	visibility: visible;
+}
+/* */
+
+
+#menu
+{
+	width:666px;
+	height:41px;
+	position:absolute;
+	top:99px;
+	right:0; /*border:1px solid red;*/
+}
+#menu .menu
+{
+	position:relative;
+	/*margin: 1px 0 0 18px;*/
+}
+#menu .menu li
+{
+	width:auto;
+	height: auto;
+	float:left;
+	position: relative;
+}
+#menu .menu li a
+{
+	height: 26px;
+	display: block;
+	font:normal 12px 'futura_md_btbold';
+	color:#fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	z-index: 1;
+	background: url( "../Images/bg-menu.jpg" ) no-repeat;
+	text-align: center;
+	padding-top:15px;
+}
+#menu .menu .bt-produtos a
+{
+	width: 104px;
+	background-position: 0 0;
+}
+#menu .menu .bt-produtos a:hover
+{
+	background-position: 0 -41px;
+}
+#menu .menu .bt-assistencia-tecnica a
+{
+	width: 170px;
+	background-position: -104px 0;
+}
+#menu .menu .bt-assistencia-tecnica a:hover
+{
+	background-position: -104px -41px;
+	}
+#menu .menu .bt-empresa a
+{
+	width: 93px;
+	background-position: -274px 0;
+}
+#menu .menu .bt-empresa a:hover
+{
+	background-position: -274px -41px;
+	}
+#menu .menu .bt-noticias a
+{
+	width: 94px;
+	background-position: -367px 0;
+}
+#menu .menu .bt-noticias a:hover
+{
+	background-position: -367px -41px;
+	}
+#menu .menu .bt-carreiras a
+{
+	width: 103px;
+	background-position: -461px 0;
+}
+#menu .menu .bt-carreiras a:hover
+{
+	background-position: -461px -41px;
+	}
+#menu .menu .bt-contato a
+{
+	width: 102px;
+	background-position: -564px 0;
+}
+#menu .menu .bt-contato a:hover
+{
+	background-position: -564px -41px;
+	}
+/*#menu .menu li span
+{
+	display:block;
+	font:normal 13px 'chicagoregular';
+	text-transform:uppercase;
+	padding:5px 8px 5px 8px;
+	color:#fff;
+	position:relative;
+	text-decoration:none;
+	z-index:1;
+	cursor:pointer;
+	}*/
+/*------------SUBMENU---------------*/
+#menu .menu li div
+{
+	width: 665px;
+	height: auto;
+	position: absolute;
+	top: 41px;
+	left: 0;
+	z-index: 2;
+	background: url( "../Images/img-top-submenu.jpg" ) top left no-repeat;
+}
+#menu .menu li div ul
+{
+	width: 635px;
+	height: auto;
+	position: relative;
+	padding: 0 15px 30px 15px;
+	background-color:#fff;
+	margin:18px 0 18px 0;
+	overflow:hidden;
+	display:block;
+}
+#menu .menu li div .bottom-submenu
+{
+	width: 665px;
+	height: 18px;
+	position: absolute;
+	top: auto;
+	bottom: 0;
+	background: url( "../Images/img-bottom-submenu.png" ) no-repeat;
+}
+#menu .menu li div ul li
+{
+	width: 185px;
+	min-height: 35px;
+	float: left;
+	background: none;
+	position: relative;
+	padding: 0 0 5px 0;
+	margin: 0 12px 0 12px;
+	border-bottom:1px solid #c1c2c6;
+}
+#menu .menu li div ul li:hover
+{
+	background-color:#eef0fb;
+	}
+#menu .menu li div ul li a
+{
+	width:100%;
+	height: 100%;
+	display: block;
+	font:normal 14px Trebuchet MS, Arial, Helvetica, sans-serif;
+	color:#909090;
+	line-height:15px;
+	text-transform: none;
+	text-decoration: none;
+	z-index: 1;
+	background: none;
+	text-align: left;
+	padding:5px 0 0 0;
+	position:relative;
+}
+
+#menu .menu li div ul li a:hover
+{
+	text-decoration:underline;
+	color:#212a6b;
+	}
+#menu .menu .bt-produtos div ul li a
+{
+	width:auto;	
+	}
+#menu .menu li div ul li a .thumb-categoria 
+{
+	width:45px;
+	height:35px;
+	display:block;
+	overflow:hidden;
+	background: #fff;
+	float:left;
+	position: relative;
+	top: 0;
+	left: 0;
+	margin-right:10px;
+	border:1px solid #d0d1d8;
+}
+#menu .menu li div ul li a:hover .thumb-categoria 
+{
+	border:1px solid #212a6b;
+	}
+#menu .menu li div ul li a .thumb-categoria img
+{
+	
+	width:auto;
+	height:100%;
+	position:relative;
+	margin:0 auto;
+	}
+#menu .menu li div .clear
+{
+	background:none;
+	height:0;
+	}
+#menu .menu li div .bt-todos-produtos
+{
+	width:191px;
+	height:26px;
+	display:block;
+	background: url("../Images/bt-todos-produtos.png") top left no-repeat;
+	position:relative;
+	z-index:99;
+	padding-top:0;	
+	left:232px;
+	}
+#menu .menu li div .bt-todos-produtos:hover
+{
+	background-position:0 -26px;
+	}
+#menu .menu li div .posicao
+{
+	position:absolute; 
+	right:0px;
+	bottom:10px;
+	}
+#menu .menu .bt-produtos:hover .link
+{
+	background-position: 0 -41px;
+}
+
+/*------------FIM SUBMENU---------------*/

@@ -1,0 +1,488 @@
+﻿/*
+================================================================================
+VEGA ADMIN
+================================================================================
+css/estilo.css :: estilos CSS
+--------------------------------------------------------------------------------
+Criacao: 10/06/10				  |  Autor: Carla <carlac@vegait.com.br>
+--------------------------------------------------------------------------------
+Ultima Alteracao: 10/06/10		  |  Autor: Carla <carlac@vegait.com.br>
+--------------------------------------------------------------------------------
+		Criacao do arquivo
+================================================================================
+				ALTERACOES MAIS ANTIGAS NO RODAPE DO ARQUIVO
+================================================================================
+*/
+
+html {
+	height: 100%;
+}
+
+img {
+    border: 0 none;
+}
+
+input[type=checkbox] {
+    border: 0 none;
+    background-color: transparent;
+}
+
+body {
+	height:100%;
+	margin:0px auto;
+	background:url('../../Images/ImgAdmin/bg-fundo.jpg') repeat;
+}
+
+#fundo {
+	width:100%;
+	height:100%;
+	background:url('../../Images/ImgAdmin/bg-topo.png') repeat-x top;
+}
+
+* html #fundo {
+	background:url('../../Images/ImgAdmin/bg-topo.gif') repeat-x top;
+}
+
+#fundo_login {
+	width:100%;
+	height:449px;
+	text-align:center;
+	background:url('../../Images/ImgAdmin/bg-topo-login.png') repeat-x top;
+}
+
+* html #fundo_login {
+	background:url('../../Images/ImgAdmin/bg-topo-login.gif') repeat-x top;
+}
+
+#master { 
+	width:951px;
+	height:auto;
+	margin:0px auto;
+	text-align:center;
+}
+
+* html #master {
+	height: 100%; /* hack para IE6 que trata height como min-height */
+}
+
+#login_aba {
+	width:600px;
+	margin:0px auto;
+	background:url('../../Images/ImgAdmin/bg-login.png') no-repeat center top;
+	position: relative;
+	height: 0px;
+	z-index: 10;
+	overflow: hidden;
+}
+
+* html #login_aba {
+	background:url('../../Images/ImgAdmin/bg-login.gif') no-repeat center top;
+}
+
+#login {
+	width:215px;
+	float:right;
+	margin:100px 55px 0px 0px;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-size:10px;
+	color:#2e406b;
+	text-align:left;
+	line-height:30px;
+}
+
+* html #login { float: left; margin:100px 0px 0px 18px;}
+
+#logo_login {
+    height:153px;
+    width:238px;
+    float:left;
+    margin:57px 0px 0px 54px;
+}
+
+* html #logo_login { margin:57px 0px 0px 27px; }
+
+#topo {
+	width:951px;
+	height:99px;
+	text-align:right;
+}
+
+#menu {
+	width:165px;
+	height:auto;
+	margin-top:20px;
+	float:left;
+}
+
+#menu_meio {
+	width:163px;
+	height:auto;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-size:13px;
+	color:#8c8c8c;
+	text-align:left;
+	line-height:15px;
+	background:#ffffff;
+	border:1px #d2d2d2 solid;
+	border-bottom:0px;
+	padding-left:4px;
+    float:left;
+}
+
+.submenu {
+	margin-left:15px;
+    line-height:26px;
+}
+
+a.submenu {
+	margin-left:0px;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-size:13px;
+	font-weight:normal;
+	color:#8c8c8c;
+	text-decoration:none;	
+}
+
+#barra {
+	width:716px;
+	height:25px;
+	margin-top:20px;
+	float:right;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-size:13px;
+	color:#8c8c8c;
+	text-align:left;
+	line-height:25px;
+	background:url('../../Images/ImgAdmin/bg-barra.gif');
+}
+
+#conteudo {
+	width:716px;
+	height:auto;
+	margin-top:30px;
+	float:right;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-size:12px;
+	color:#666666;
+	text-align:left;
+}
+
+.titulo {
+	height:25px;
+	margin-bottom:20px;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-size:17px;
+	font-weight:bold;
+	color:#666666;
+	background:url('../../Images/ImgAdmin/img-linha-titulo.jpg') no-repeat bottom;
+}
+
+.mais_acessados {
+	width:212px;
+	height:59px;
+	float:left;
+	margin:10px;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-size:11px;
+	color:#8c8c8c;
+	text-align:center;
+	background:url('../../Images/ImgAdmin/bg-mais-acessados.gif') no-repeat;
+}
+
+.mais_acessados_titulo {
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-size:16px;
+	font-weight:bold;
+	color:#8c8c8c;
+}
+
+.listagem {
+	width: 100%;
+	margin:20px 0px 20px 0px;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-size:11px;
+	color:#666666;
+	text-align:left;
+}
+
+.listagem td:first-child, th:first-child {
+    padding-left:5px;
+}
+.listagem td,th {
+    text-align:left;
+}
+
+.cadastro {
+	width:100%;
+	margin:20px 0px 20px 0px;
+}
+
+.cadastro_texto {
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-weight:bold;
+	color:#2E406B;
+	text-align:left;
+}
+
+.cadastro_texto td {
+    height:30px;
+}
+
+.tabCadastro {
+    width: 675px;
+    padding: 20px;
+    height: auto;
+    float: left;
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+}
+
+.bt_tab_cadastro {
+    float: left;
+    cursor: pointer;
+    background: url('../../Images/ImgAdmin/bg-tab-cadastros.gif') no-repeat;
+    width: 133px;
+    height:20px;
+    padding-top: 5px;
+    text-align: center;
+}
+.bt_tab_cadastro_selecionada {
+    float: left;    
+    cursor: pointer;
+    background: url('../../Images/ImgAdmin/bg-tab-cadastros-selecionada.gif') no-repeat;
+    width: 133px;
+    height:20px;
+    padding-top: 5px;
+    text-align: center;
+}
+
+
+.checkbox {
+	width:100%;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-size:11px;
+	font-weight:normal;
+	color:#666666;
+}
+
+.paginacao {
+	margin:16px 10px 10px -4px;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-size:11px;
+	color:#666666;
+	text-align:center;
+	word-spacing:10px;
+	border-top: solid 1px #CECECE;
+	padding-top:17px;
+}
+
+a.paginacao {
+	margin:0px;
+	font-size:14px;
+	color:#2E406B;
+}
+
+.por_pagina {
+	float:right;
+	word-spacing:0px;
+}
+
+#rodape {
+	width:951px;
+	height:35px;
+	float:left;
+	margin-top:30px;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-size:11px;
+	color:#8c8c8c;
+	text-align:left;
+}
+
+.marcacao {
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-weight:bold;
+	color:#2E406B;
+}
+
+a {
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-weight:bold;
+	color:#2E406B;
+	text-decoration:none;
+}
+
+a:hover {
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-weight:bold;
+	color:#2E406B;
+	text-decoration:underline;
+}
+
+input, textarea, select {
+	height:20px;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-size:13px;
+	color:#666666;
+	background-color:#fff;
+	border:1px solid #b6b6b6;
+	vertical-align:middle;
+}
+
+input.login {
+	width:215px;
+	height:20px;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-size:12px;
+	color:#666666;
+	background-color:#f7f7f7;
+	border:1px solid #d2d2d2;
+	vertical-align:middle;
+}
+
+.texto 
+{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-size:13px;
+	color:#666666;
+	font-weight:normal;
+}
+
+/*********************************************************************
+                                CSS DEV
+**********************************************************************/
+
+/* IMAGEBUTON*/
+.btnImagem 
+{
+    height:25px;    /* é necessário pq o input tem altura para os campos text entre outros */
+}
+
+/* MENU */
+.accordionHeaderOpened 
+{
+    background:url('../../Images/ImgAdmin/img-seta-baixo.gif') no-repeat left center;
+    padding-left:22px;
+    font-size: 13px;
+}
+
+.accordionHeaderClosed 
+{
+    background:url('../../Images/ImgAdmin/img-seta-lado.gif') no-repeat left center;
+    padding-left:22px;
+    font-size: 13px;
+}
+
+/* LISTAGENS */
+.linha
+{
+    /*background:url('../../Images/ImgAdmin/bg-listagem.jpg') repeat-x center;*/
+    background-color: #EFEFEF;
+    height: 28px;
+}
+
+.linhaAlternada
+{
+    height: 28px;
+}
+
+.btExcluirListagem 
+{
+    background:transparent;
+}
+
+.header
+{
+    height:20px;
+    text-align:left;
+}
+
+a.tituloListagem
+{
+    color:#666666;
+    font-family:Verdana,Geneva,Tahoma,sans-serif;
+    font-size:11px;
+}
+    
+
+/* PAGINAÇÃO */
+.paginaSelecionada
+{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-weight:bold;
+	font-size:13px;
+	color:#2E406B;
+	text-decoration:none;
+    margin: 0px 7px;
+}
+
+.paginaNaoSelecionada {
+    margin: 0px 7px;
+}
+
+a.paginaNaoSelecionada
+{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-weight:normal;
+	color:#666666;
+	text-decoration:none;  
+}
+
+a.paginaNaoSelecionada:hover {
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-weight:normal;
+	color:#666666;
+	text-decoration:underline;
+}
+
+a.paginaNaoSelecionada img
+{
+    margin-bottom:-8px;
+}
+
+span.paginaSelecionada img
+{
+    margin-bottom:-8px;
+}
+
+/* TOOLTIP MENU SUPERIOR */
+.tableToolTipMenuSuperior
+{
+    width:85%;
+}
+
+.tableToolTipMenuSuperior td
+{
+    border-bottom:solid 1px #d9d9d9; 
+    padding:5px;
+}
+
+.watermark-extender
+{
+    color: #AAAAAA;
+}
+
+/* MODAL */
+.modalPopup
+{
+    background-color: #FFFFFF; 
+    font-weight: bold;
+    color: #003366; 
+    padding: 15px; 
+    font-size: 12px;
+}
+
+.modalBackground {
+	background-color:#DDDDDD;
+	filter:alpha(opacity=80);
+	opacity:0.7;
+}
+/*
+================================================================================
+							ALTERACOES ANTERIORES
+================================================================================
+Data Alteracao: 10/06/10	  	|  Autor: Carla <carlac@vegait.com.br>
+--------------------------------------------------------------------------------
+	*	Criacao do arquivo
+--------------------------------------------------------------------------------
+================================================================================
+*/
